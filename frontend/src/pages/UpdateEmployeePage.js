@@ -29,6 +29,8 @@ const UpdateEmployeePage = () => {
   const { id } = useParams();
   console.log(id);
 
+  const [error, setError] = useState("");
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -77,6 +79,29 @@ const UpdateEmployeePage = () => {
       salary,
       personalNote,
     };
+    if (
+      fullName === "" ||
+      nameWithInitial === "" ||
+      displayName === "" ||
+      gender === "" ||
+      dob === "" ||
+      email === "" ||
+      mobileNumber === "" ||
+      designation === "" ||
+      employeeType === "" ||
+      joinedDate === "" ||
+      experience === "" ||
+      salary === "" ||
+      personalNote === ""
+    ) {
+      setError("*All fields must be provided");
+    } else {
+      const response = await axios.put(`/api/employee/` + id, formData);
+      console.log(response);
+      if (response.statusText == "OK") {
+        navigate("/");
+      }
+    }
 
     const response = await axios.put(`/api/employee/` + id, formData);
     console.log(response);
@@ -240,11 +265,11 @@ const UpdateEmployeePage = () => {
           />
         </Form.Group>
 
-        {/* {error !== "" ? (
+        {error !== "" ? (
           <span className="align-center text-danger">{error}</span>
         ) : (
           ""
-        )} */}
+        )}
 
         <div className="d-flex justify-content-end">
           <Link to="/">
