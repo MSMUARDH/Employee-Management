@@ -1,0 +1,30 @@
+.label-text {
+    color: #00318C !important;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+}
+
+.form-heading {
+    /* position: absolute;
+    width: 88px;
+    height: 24px;
+    left: 24px;
+    top: 16px; */
+
+    /* Body - Large - Semibold */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: -0.1px;
+
+    color: #000000;
+}
